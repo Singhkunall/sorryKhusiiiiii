@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Khusiii 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-heart {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fdf2f8;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        .bg-baby-pink {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f9a8d4 100%);
+        }
+    </style>
+</head>
+<body class="bg-baby-pink min-h-screen relative overflow-x-hidden">
+    <!-- Sparkle effects -->
+    <div class="sparkle" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 20%; right: 15%; animation-delay: 0.5s;"></div>
+    <div class="sparkle" style="top: 60%; left: 20%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 80%; right: 25%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 40%; right: 10%; animation-delay: 2s;"></div>
+    
+    <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col items-center justify-center relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-12 fade-in">
+            <div class="floating mb-6">
+                <span class="text-8xl">🌸</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-pink-800 mb-4">
+                Sorry Khusiii
+            </h1>
+            <div class="pulse-heart text-4xl mb-4">💕</div>
+        </div>
+        
+        <!-- Main message -->
+        <div class="max-w-4xl mx-auto text-center mb-12 fade-in">
+            <div class="bg-white/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-pink-200">
+                <h2 class="text-3xl md:text-4xl font-semibold text-pink-900 mb-6">
+                    To My More Than Best Friend
+                </h2>
+                
+                <div class="space-y-6 text-lg md:text-xl text-pink-800 leading-relaxed">
+                    <p class="floating" style="animation-delay: 0.2s;">
+                        I know I messed up, and I'm truly sorry for hurting you 😔
+                    </p>
+                    
+                    <p class="floating" style="animation-delay: 0.4s;">
+                        You mean the world to me, Khusiii, and seeing you upset breaks my heart 💔
+                    </p>
+                    
+                    <p class="floating" style="animation-delay: 0.6s;">
+                        Our friendship is so precious to me - you're not just my best friend, you're my person ✨
+                    </p>
+                    
+                    <p class="floating" style="animation-delay: 0.8s;">
+                        Please forgive me? I promise to do better and cherish what we have 🥺
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex justify-center space-x-4 text-3xl">
+                    <span class="floating" style="animation-delay: 1s;">🌺</span>
+                    <span class="floating" style="animation-delay: 1.2s;">💖</span>
+                    <span class="floating" style="animation-delay: 1.4s;">🌸</span>
+                    <span class="floating" style="animation-delay: 1.6s;">💕</span>
+                    <span class="floating" style="animation-delay: 1.8s;">🌺</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-12 fade-in">
+            <button onclick="showMessage('forgiven')" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                I Forgive You 💕
+            </button>
+            <button onclick="showMessage('hug')" class="bg-pink-400 hover:bg-pink-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                Virtual Hug 🤗
+            </button>
+            <button onclick="showMessage('bestie')" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                Always Besties 👯‍♀️
+            </button>
+        </div>
+        
+        <!-- Message display -->
+        <div id="messageDisplay" class="hidden max-w-2xl mx-auto text-center">
+            <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-pink-200">
+                <p id="messageText" class="text-xl font-medium text-pink-900"></p>
+                <div class="mt-4 text-2xl" id="messageEmoji"></div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="mt-12 text-center fade-in">
+            <p class="text-pink-700 font-medium text-lg">
+                With all my love and endless apologies 💝
+            </p>
+            <div class="mt-4 flex justify-center space-x-2 text-2xl">
+                <span class="pulse-heart">💖</span>
+                <span class="pulse-heart" style="animation-delay: 0.5s;">🌸</span>
+                <span class="pulse-heart" style="animation-delay: 1s;">💖</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showMessage(type) {
+            const messageDisplay = document.getElementById('messageDisplay');
+            const messageText = document.getElementById('messageText');
+            const messageEmoji = document.getElementById('messageEmoji');
+            
+            const messages = {
+                forgiven: {
+                    text: "Thank you for your kind heart, Khusiii! You're the most amazing friend ever! 💕",
+                    emoji: "🥰✨💖"
+                },
+                hug: {
+                    text: "Sending you the biggest, warmest virtual hug! I miss you so much! 🤗",
+                    emoji: "🫂💕🌸"
+                },
+                bestie: {
+                    text: "Forever and always! Nothing can break our special bond, Khusiii! 👯‍♀️",
+                    emoji: "💖✨🌺"
+                }
+            };
+            
+            messageText.textContent = messages[type].text;
+            messageEmoji.textContent = messages[type].emoji;
+            messageDisplay.classList.remove('hidden');
+            messageDisplay.classList.add('fade-in');
+            
+            // Add celebration effect
+            createHearts();
+        }
+        
+        function createHearts() {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💖';
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = '2rem';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    heart.style.animation = 'float-up 3s ease-out forwards';
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }, i * 200);
+            }
+        }
+        
+        // Add float-up animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add some random sparkles periodically
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = '0s';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }, 3000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e9642af5fb3218',t:'MTc1NTEwMDQ2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
